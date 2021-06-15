@@ -15,7 +15,13 @@ class Auth{
     googleProvider
         .addScope('https://www.googleapis.com/auth/contacts.readonly');
     return await auth.signInWithPopup(googleProvider);
+
+    
   }
+
+  Future<void> signOut() async {
+  await FirebaseAuth.instance.signOut();
+}
 
 }
 

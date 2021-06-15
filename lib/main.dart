@@ -39,7 +39,7 @@ class TeamFabricasApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        StreamProvider<User?>(create: (context)=> Auth().authstate,initialData: null,),
+        StreamProvider<User?>(create: (context)=> Auth().authstate, initialData: Auth().auth.currentUser,),
 
       ],
       child: MaterialApp(
