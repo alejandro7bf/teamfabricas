@@ -2,9 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:teamfabricas/Firebase_services/auth.dart';
+
 import 'package:teamfabricas/Widgets/LogoWidget.dart';
 
-class LoginScreen extends StatelessWidget {
+class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                         height: 80,
                       ),
                       onTap: () {
-                        signInWithGoogle();
+                        Auth().signInWithGoogle();
                       },
                     ),
                   ],
