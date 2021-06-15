@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teamfabricas/Screens/LoginScreen.dart';
 
 void main() {
   runApp(TeamFabricasApp());
@@ -12,12 +13,8 @@ class TeamFabricasApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        body: Center(
-            child: Text(
-          'login page',
-        )),
-      ),
+      home: LoginScreen(),
     );
   }
 }
+
