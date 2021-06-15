@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -26,7 +27,35 @@
   <title>teamfabricas</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyCBeoQ0pvev9H1PQq7nzwqfXY-T5JtwzIw",
+      authDomain: "teamfabricas.firebaseapp.com",
+      projectId: "teamfabricas",
+      storageBucket: "teamfabricas.appspot.com",
+      messagingSenderId: "939065949286",
+      appId: "1:939065949286:web:41bdffbb18164afce341a7",
+      measurementId: "G-4NX6M7XZCG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
@@ -95,4 +124,5 @@
     }
   </script>
 </body>
+
 </html>
