@@ -2,9 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:teamfabricas/Screens/HomeScreen.dart';
-import 'package:teamfabricas/Screens/LoginScreen.dart';
 import 'package:teamfabricas/Firebase_services/auth.dart';
+import 'package:teamfabricas/Widgets/LoadingWidget.dart';
+
+import 'Widgets/AuthWidget.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,16 +22,17 @@ class App extends StatelessWidget {
       future: _initialization,
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return Center();
+          return Loading();
         }
         if (snapshot.connectionState == ConnectionState.done) {
           return TeamFabricasApp();
         }
-        return Center();
+        return Loading();
       },
     );
   }
 }
+
 
 class TeamFabricasApp extends StatelessWidget {
   @override
@@ -52,12 +54,3 @@ class TeamFabricasApp extends StatelessWidget {
 }
 
 
-class Authentication extends StatelessWidget {
-  
-  @override
-  Widget build(BuildContext context) {
-    final  user = context.watch<User?>();
-    return user?.uid != null? ( user!.uid.isNotEmpty ? Home(): Login()) :Login();
-  }
-
-}
