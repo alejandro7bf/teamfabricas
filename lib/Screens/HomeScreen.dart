@@ -1,9 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:teamfabricas/Firebase_services/auth.dart';
-import 'package:teamfabricas/Widgets/LogoWidget.dart';
 import 'package:provider/provider.dart';
-import 'package:teamfabricas/Widgets/UserCard.dart';
+import 'package:teamfabricas/Widgets/NavigationBar.dart';
+
 
 class Home extends StatelessWidget {
   @override
@@ -16,15 +15,8 @@ class Home extends StatelessWidget {
             padding: EdgeInsets.all(20),
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: UserCard(user!),
-                    ),
-                    Flexible(child: Logo()),
-                  ],
-                ),
+                NavigationBar(user: user),
+                Divider()
               ],
             ),
           )
@@ -33,4 +25,6 @@ class Home extends StatelessWidget {
     );
   }
 }
+
+
 
