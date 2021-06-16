@@ -1,20 +1,11 @@
-<<<<<<< HEAD
-# teamfabricas
 
-A new Flutter project.
+# TEAMFabricas
+
+Visit the page https://teamfabricas.web.app
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Clone the project and update dart & Flutter, you should be able to run it
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# teamfabricas
->>>>>>> 651050a126e29c8898e56319eab2e08f215ccfa4
+Please contact me if any mistake
