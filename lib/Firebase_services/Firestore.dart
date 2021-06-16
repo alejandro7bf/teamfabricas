@@ -12,14 +12,14 @@ class FirestoreService{
     var data ={
       "name" : fabrica.name,
       "market": fabrica.market,
-      "description": fabrica.description,
+      //"description": fabrica.description ,
       "ceo": fabrica.ceo,
-      "photoURL": fabrica.photoURL,
+      "photoURL": "https://picsum.photos/200/300",
       "city": fabrica.city,
       "country": fabrica.country,
       "telephone": fabrica.telephone,
       "web" : fabrica.web,
-      "foundationDate": fabrica.foundationDate,
+      //"foundationDate": fabrica.foundationDate ,
       "noemployees": fabrica.headcount,
       "creationDate": FieldValue.serverTimestamp(),
 
