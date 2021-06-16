@@ -2,8 +2,8 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:teamfabricas/Widgets/LogoWidget.dart';
-import 'package:teamfabricas/Widgets/UserCard.dart';
+import 'package:teamfabricas/Widgets/General/LogoWidget.dart';
+import 'package:teamfabricas/Widgets/General/UserCard.dart';
 
 class NavigationBar extends StatelessWidget {
   const NavigationBar({

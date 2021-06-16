@@ -3,9 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:teamfabricas/Firebase_services/auth.dart';
-import 'package:teamfabricas/Widgets/LoadingWidget.dart';
+import 'package:teamfabricas/Widgets/General/LoadingWidget.dart';
 
-import 'Widgets/AuthWidget.dart';
+import 'Widgets/Auth/AuthWidget.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:teamfabricas/Firebase_services/auth.dart';
 
-import 'package:teamfabricas/Widgets/LogoWidget.dart';
+import 'package:teamfabricas/Widgets/General/LogoWidget.dart';
 
 class Login extends StatelessWidget {
   @override
