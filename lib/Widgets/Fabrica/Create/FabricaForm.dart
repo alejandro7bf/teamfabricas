@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:teamfabricas/Models/Fabrica.dart';
-import 'package:teamfabricas/Widgets/Fabrica/Create/ActionForm.dart';
 import 'package:teamfabricas/Widgets/Fabrica/Create/FabricaTextField.dart';
 
+// ignore: must_be_immutable
 class FormFabrica extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
 
@@ -16,7 +16,6 @@ class FormFabrica extends StatelessWidget {
   TextEditingController _controllerheadcount = TextEditingController();
   TextEditingController _controllerphotourl = TextEditingController();
 
-  @override
   void dispose() {
     _controllername.dispose();
     _controllermarket.dispose();

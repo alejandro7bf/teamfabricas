@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:teamfabricas/Firebase_services/auth.dart';
 
+// ignore: must_be_immutable
 class UserCard extends StatelessWidget {
   User user;
   UserCard(this.user);
