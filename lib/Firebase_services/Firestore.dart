@@ -4,12 +4,14 @@ import 'dart:async';
 import 'dart:core';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:teamfabricas/Firebase_services/auth.dart';
 import 'package:teamfabricas/Models/Fabrica.dart';
 
 
 class FirestoreService{
 
   var db = FirebaseFirestore.instance;
+
 
 //Create
   Future<void> createFabrica(Fabrica fabrica) async {
@@ -18,7 +20,7 @@ class FirestoreService{
       "market": fabrica.market,
       //"description": fabrica.description ,
       "ceo": fabrica.ceo,
-      "photoURL": "https://picsum.photos/200/300",
+      "photoURL": fabrica.photoURL,
       "city": fabrica.city,
       "country": fabrica.country,
       "telephone": fabrica.telephone,
@@ -26,7 +28,11 @@ class FirestoreService{
       //"foundationDate": fabrica.foundationDate ,
       "headcount": fabrica.headcount,
       "creationDate": FieldValue.serverTimestamp(),
-
+      "CreatedBy_uid" : Auth().auth.currentUser!.uid,
+      "CreatedBy_email" : Auth().auth.currentUser!.email,
+      "CreatedBy_displayname" : Auth().auth.currentUser!.displayName,
+      "CreatedBy_photoURL" : Auth().auth.currentUser!.photoURL,
+   
     };
 
     db.collection('Fabrica').add(data);
@@ -37,6 +43,7 @@ class FirestoreService{
   Stream<List<Fabrica>> getFabricas (){
      return FirebaseFirestore.instance
       .collection('Fabrica')
+      .orderBy('creationDate',descending: true)
       .snapshots()
       .map(toFabricaList);
   }

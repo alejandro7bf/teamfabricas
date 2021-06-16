@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:teamfabricas/Models/Fabrica.dart';
-import 'package:teamfabricas/Widgets/Fabrica/ActionForm.dart';
-import 'package:teamfabricas/Widgets/Fabrica/FabricaTextField.dart';
+import 'package:teamfabricas/Widgets/Fabrica/Create/ActionForm.dart';
+import 'package:teamfabricas/Widgets/Fabrica/Create/FabricaTextField.dart';
 
 class FormFabrica extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -14,6 +14,7 @@ class FormFabrica extends StatelessWidget {
   TextEditingController _controllertelephone = TextEditingController();
   TextEditingController _controllerweb = TextEditingController();
   TextEditingController _controllerheadcount = TextEditingController();
+  TextEditingController _controllerphotourl = TextEditingController();
 
   @override
   void dispose() {
@@ -25,6 +26,7 @@ class FormFabrica extends StatelessWidget {
     _controllertelephone.dispose();
     _controllerweb.dispose();
     _controllerheadcount.dispose();
+    _controllerphotourl.dispose();
   }
 
   @override
@@ -44,6 +46,8 @@ class FormFabrica extends StatelessWidget {
               controllername: _controllertelephone, hint: "Teléfono"),
           FabricaTextField(
               controllername: _controllerheadcount, hint: "Número Empleados"),
+          FabricaTextField(
+              controllername: _controllerphotourl, hint: "Logo URL"),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -66,7 +70,7 @@ class FormFabrica extends StatelessWidget {
                     fabrica.web = _controllerweb.text;
                     fabrica.telephone = _controllertelephone.text;
                     fabrica.headcount = _controllerheadcount.text;
-                   
+                    fabrica.photoURL =_controllerphotourl.text;
 
                     Fabrica.save(fabrica);
                     Navigator.of(context).pop();

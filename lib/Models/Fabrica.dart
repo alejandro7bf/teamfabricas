@@ -8,6 +8,7 @@ class Fabrica{
   late String id, name, market, description, ceo, photoURL, city, country, telephone, web;
   late DateTime foundationDate, creationDate;
   late String headcount;
+  /*late String createdby_uid,createdby_name;*/
   
       Fabrica.fromFirestore(DocumentSnapshot doc){
         if(doc.data() != null){
