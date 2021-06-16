@@ -16,7 +16,7 @@ class FabricaBoxDetail extends StatelessWidget {
       elevation: 4,
       child: Column(
         children: [
-          Image.network(fabrica.photoURL, fit: BoxFit.contain),
+          Container(height: 200,child: Image.network(fabrica.photoURL, fit: BoxFit.cover)),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListTile(
@@ -48,7 +48,7 @@ class FabricaBoxDetail extends StatelessWidget {
                         decoration: TextDecoration.underline,
                       )),
                   onTap: () {
-                    launch(fabrica.web);
+                    launch("https://"+fabrica.web);
                   }),
             ],
           )

@@ -44,6 +44,7 @@ class TeamFabricasApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'TeamFabricas',
+        debugShowCheckedModeBanner:false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
