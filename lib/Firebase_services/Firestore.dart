@@ -1,13 +1,17 @@
 
 
+import 'dart:async';
+import 'dart:core';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:teamfabricas/Models/Fabrica.dart';
+
 
 class FirestoreService{
 
   var db = FirebaseFirestore.instance;
 
-
+//Create
   Future<void> createFabrica(Fabrica fabrica) async {
     var data ={
       "name" : fabrica.name,
@@ -20,7 +24,7 @@ class FirestoreService{
       "telephone": fabrica.telephone,
       "web" : fabrica.web,
       //"foundationDate": fabrica.foundationDate ,
-      "noemployees": fabrica.headcount,
+      "headcount": fabrica.headcount,
       "creationDate": FieldValue.serverTimestamp(),
 
     };
@@ -28,4 +32,16 @@ class FirestoreService{
     db.collection('Fabrica').add(data);
   }
 
+
+  //Read Real time
+  Stream<List<Fabrica>> getFabricas (){
+     return FirebaseFirestore.instance
+      .collection('Fabrica')
+      .snapshots()
+      .map(toFabricaList);
+  }
+ 
+
 }
+
+ 
